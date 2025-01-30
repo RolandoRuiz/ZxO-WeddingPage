@@ -5,7 +5,7 @@
     --soft-gold: #D5B88F;
     --soft-grey: #F0F0F0;
     --pure-white: #FFFFFF;
-    --medium-black: #111111;
+    --medium-black: #0d0d0d;
 }
 
 *, *::before, *::after{
@@ -20,7 +20,7 @@
     width: 100svw;
     height: 100svh;
     overflow: hidden;
-    background-color: var(--soft-grey);
+    background-color: var(--medium-black);
     position: relative;
     display: flex;
     justify-content: center;
@@ -32,14 +32,10 @@
     height: 50svw;
     background: linear-gradient(var(--shadow-red) 20%, var(--bright-red));
     position: absolute;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
     transform-style: preserve-3d;
     transform: translateY(250%) scale(0.2) rotatex(0deg);
 
-    animation: letterSlideIn 5s cubic-bezier(.33,1.08,.71,.98) forwards;
-
+    animation: letterSlideIn 5s cubic-bezier(.33,1.08,.84,1.08) forwards;
 }
 
 #frontLetterContainer{
@@ -58,6 +54,19 @@
     height: 100%;
     background: radial-gradient( ellipse at center, var(--bright-red) 0%, var(--deep-red) 70%);
     transform: rotateY(180deg);
+    filter: drop-shadow(0px 0px 200px rgba(255, 255, 255, 0)) drop-shadow(0px 0px 100px rgba(255, 255, 255, 0));
+
+    animation: glow 1.5s ease-in-out alternate infinite;
+    animation-delay: 4s;
+
+}
+
+@keyframes glow {
+    from{
+        filter: drop-shadow(0px 0px 100px rgba(255, 255, 255, 0)) drop-shadow(0px 0px 100px rgba(255, 255, 255, 0));
+    }to{
+        filter: drop-shadow(0px 0px 200px rgb(255, 255, 255)) drop-shadow(0px 0px 100px rgb(255, 255, 255));
+    }
 }
 
 #innerElements{
