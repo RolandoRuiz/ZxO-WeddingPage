@@ -53,6 +53,8 @@
     grid-column-start: 1;grid-column-end: 4;grid-row-start: 1;grid-row-end: 3;
     
     filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
+    animation: noShadow 1.5s forwards ease-out;
+    animation-delay: 200ms;
 }
 
 #letterLidContainer{
@@ -154,6 +156,16 @@
         transform: rotatex(0deg);
     }to{
         transform: rotatex(180deg);
+    }
+}
+
+@keyframes noShadow {
+    0%{
+        filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
+    }50%{
+        filter: drop-shadow(0px 10px 20px rgba(39, 1, 1, 0));
+    }100%{
+        filter: drop-shadow(0px 10px 20px rgba(39, 1, 1, 0));
     }
 }
 
