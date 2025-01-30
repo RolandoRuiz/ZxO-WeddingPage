@@ -53,8 +53,8 @@
     grid-column-start: 1;grid-column-end: 4;grid-row-start: 1;grid-row-end: 3;
     
     filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
-    animation: noShadow 1.5s forwards ease-out;
-    animation-delay: 200ms;
+    /*animation: noShadow 1.5s forwards ease-out;
+    animation-delay: 200ms;*/
 }
 
 #letterLidContainer{
@@ -62,8 +62,8 @@
     height: inherit;
     transform-origin: center top;
     transform-style: preserve-3d;
-    animation: openLetter 1.5s forwards ease-out;
-    animation-delay: 200ms;
+    /*animation: openLetter 1.5s forwards ease-out;
+    animation-delay: 200ms;*/
 }
 
 .lid{
@@ -71,7 +71,7 @@
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
-    clip-path: polygon(100% -0.2%, 50% 100%, 0% -0.2%);
+    clip-path: polygon(100% -0.5%, 50% 100%, 0% -0.5%);
 }
 
 #outer{
@@ -85,7 +85,7 @@
 }
 
 
-.letterSides{
+.letterSide{
     width: 100%;
     height: 100%;
     position: absolute;
@@ -97,9 +97,8 @@
     grid-column-start: 1; grid-column-end: 4;
     grid-row-start: 2; grid-row-end: 4;
     filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
-
-    animation: pulse 1s ease-in-out alternate infinite;
-    animation-delay: 2s;
+    /*animation: pulse 1s ease-in-out alternate infinite;
+    animation-delay: 2s;*/
 }
 
 #leftShadow{
@@ -108,9 +107,8 @@
     grid-column-start: 1; grid-column-end: 2;
     grid-row-start: 1; grid-row-end: 4;
     filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
-
-    animation: pulse 1s ease-in-out alternate infinite;
-    animation-delay: 2s;
+    /*animation: pulse 1s ease-in-out alternate infinite;
+    animation-delay: 2s;*/
 }
 
 #rightShadow{
@@ -119,9 +117,9 @@
     grid-column-start: 3; grid-column-end: 4;
     grid-row-start: 1; grid-row-end: 4;
     filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
-
-    animation: pulse 1s ease-in-out alternate infinite;
-    animation-delay: 2s;
+    filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
+    /*animation: pulse 1s ease-in-out alternate infinite;
+    animation-delay: 2s;*/
 }
 
 #bottomSide{
