@@ -1,0 +1,162 @@
+:root{
+    --deep-red: #510414;
+    --bright-red: #990E0E;
+    --shadow-red: #35010c;
+    --soft-gold: #D5B88F;
+    --soft-grey: #F0F0F0;
+    --pure-white: #FFFFFF;
+    --medium-black: #111111;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    /*outline: 1px solid red;*/
+}
+
+#openingSequence{
+    width: 100svw;
+    height: 100svh;
+    overflow: hidden;
+    background-color: var(--soft-grey);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#letterContainer{
+    width: 80svw;
+    height: 50svw;
+    background: linear-gradient(var(--shadow-red) 20%, var(--bright-red));
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+#innerElements{
+    width: 100%;
+    height: 100%;
+    grid-column-start: 1;grid-column-end: 4;grid-row-start: 1;grid-row-end: 4;
+    display: grid;
+    grid-template-columns: 1fr 0.2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    overflow: hidden;
+}
+
+#letterLidContainer{
+    width: 100%;
+    height: 100%;
+    grid-column-start: 1;grid-column-end: 4;grid-row-start: 1;grid-row-end: 3;
+    
+
+    transform-origin: center top;
+    transform-style: preserve-3d;
+
+    animation: openLetter 1.5s forwards ease-out;
+    animation-delay: 200ms;
+}
+
+.lid{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    clip-path: polygon(100% -0.2%, 50% 100%, 0% -0.2%);
+}
+
+#outer{
+    background: radial-gradient( ellipse at top, var(--bright-red) 20%, var(--deep-red) 70%);
+
+}
+
+#inner{
+    background: linear-gradient(var(--shadow-red) 20%, var(--bright-red));
+    transform: rotateY(180deg);
+}
+
+
+.letterSides{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#bottomShadow{
+    width: 100%;
+    height: 100%;
+    grid-column-start: 1; grid-column-end: 4;
+    grid-row-start: 2; grid-row-end: 4;
+    filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
+
+    animation: pulse 1s ease-in-out alternate infinite;
+    animation-delay: 2s;
+}
+
+#leftShadow{
+    width: 100%;
+    height: 100%;
+    grid-column-start: 1; grid-column-end: 2;
+    grid-row-start: 1; grid-row-end: 4;
+    filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
+
+    animation: pulse 1s ease-in-out alternate infinite;
+    animation-delay: 2s;
+}
+
+#rightShadow{
+    width: 100%;
+    height: 100%;
+    grid-column-start: 3; grid-column-end: 4;
+    grid-row-start: 1; grid-row-end: 4;
+    filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
+
+    animation: pulse 1s ease-in-out alternate infinite;
+    animation-delay: 2s;
+}
+
+#bottomSide{
+    width: inherit;
+    height: inherit;
+    background: radial-gradient( ellipse at top, var(--bright-red) 20%, var(--deep-red) 70%);
+    clip-path: polygon(100% 100%, 50% 0%, 0% 100%);
+
+}
+
+#leftSide{
+    width: inherit;
+    height: inherit;
+    background: radial-gradient( ellipse at top right, var(--bright-red) 20%, var(--deep-red) 70%);
+    clip-path: polygon(100% 50%, 0% 0%, 0% 100%);
+
+}
+
+#rightSide{
+    width: inherit;
+    height: inherit;
+    background: radial-gradient( ellipse at top left, var(--bright-red) 20%, var(--deep-red) 70%);
+    clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+
+}
+
+
+/* Animations */
+
+@keyframes openLetter {
+    from{
+        transform: rotatex(0deg);
+    }to{
+        transform: rotatex(180deg);
+    }
+}
+
+@keyframes pulse {
+    from{
+        filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
+    }to{
+        filter: drop-shadow(0px 10px 20px rgb(255, 0, 0));
+    }
+}
