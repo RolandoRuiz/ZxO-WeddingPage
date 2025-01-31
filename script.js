@@ -1,6 +1,6 @@
-const letter = document.getElementById("letterContainer");
-
 function openLetter() {
+
+    const letter = document.getElementById("letterContainer");
     const lidShadow = document.getElementById("lidShadow");
     const lid = document.getElementById("letterLidContainer");
     const glowEffect1 = document.getElementById("leftShadow")
@@ -17,4 +17,5 @@ function openLetter() {
     glowEffect2.style.animationDelay = "2s";
     glowEffect3.style.animation = "pulse 1s ease-in-out alternate infinite";
     glowEffect3.style.animationDelay = "2s";
+    letter.style.animation = "closeUp 1s ease-in-out forwards";
 }
