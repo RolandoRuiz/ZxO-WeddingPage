@@ -186,12 +186,24 @@
     grid-row-start: 3; grid-row-end: 31;
 }
 
-.mainLine{
+.topLine{
+    fill: var(--medium-black);
+    background-color: #FFFFFF;
+    stroke: #F0F0F0;
+    stroke-width: 0.2%;
+    stroke-dasharray: 200000px;
+    stroke-dashoffset: 1350000px;
+    clip-path: url(#topMainLine);
+}
+
+.bottomLine{
     fill: var(--medium-black);
     background-color: #FFFFFF;
     stroke: #F0F0F0;
     stroke-width: 10%;
+    clip-path: url(#bottomMainLine);
 }
+
 
 
 /* Animations */
