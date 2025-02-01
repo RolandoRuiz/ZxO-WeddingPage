@@ -170,6 +170,29 @@
 
 }
 
+#sparkleContainer{
+    position: absolute;
+    bottom: 0%;
+    height: 75svh;
+    width: 100svw;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(30, 1fr);
+}
+
+#mainLineContainer{
+    border: 2px solid red;
+    grid-column-start: 2; grid-column-end: 15;
+    grid-row-start: 3; grid-row-end: 31;
+}
+
+.mainLine{
+    fill: var(--medium-black);
+    background-color: #FFFFFF;
+    stroke: #F0F0F0;
+    stroke-width: 10%;
+}
+
 
 /* Animations */
 
@@ -204,12 +227,12 @@
         transform: translateY(250%) scale(0.2) rotateY(0deg);
         
     }20%{
-        transform: translateY(150%) scale(0.4);
+        transform: translateY(140%) scale(0.4);
         
     }30%{
-        transform: translateY(153%) scale(0.4) rotateY(-25deg);
+        transform: translateY(143%) scale(0.4) rotateY(-25deg);
     }35%{
-        transform: translateY(154%) scale(0.4) rotateY(-27deg);
+        transform: translateY(144%) scale(0.4) rotateY(-27deg);
        
     }100%{
         transform: translateY(0%) scale(1) rotateY(720deg);
