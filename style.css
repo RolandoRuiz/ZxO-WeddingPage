@@ -60,6 +60,23 @@ html{
 
     }
 }
+#backLetterContainer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+
+    grid-column-start: 1; grid-column-end: 2; grid-row-start: 3; grid-row-end: 6;
+    background: radial-gradient(ellipse at top, var(--bright-red) -20%, var(--shadow-red) 85%);
+    transform: rotateY(180deg);
+
+    /*Animation to be added via JS script
+    
+    filter: drop-shadow(0px 0px 200px rgba(255, 255, 255, 0)) drop-shadow(0px 0px 100px rgba(255, 255, 255, 0));
+    animation: glow 1.5s ease-in-out alternate infinite;
+    animation-delay: 4s;*/
+}
+
 
 #frontLetterContainer{
     width: 100%;
@@ -73,44 +90,31 @@ html{
     backface-visibility: hidden;
 }
 
-#backLetterContainer{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: grid;
-    grid-column-start: 1; grid-column-end: 2; grid-row-start: 3; grid-row-end: 6;
-    background: radial-gradient(ellipse at top, var(--bright-red) -20%, var(--shadow-red) 85%);
-    transform: rotateY(180deg);
-
-    /*filter: drop-shadow(0px 0px 200px rgba(255, 255, 255, 0)) drop-shadow(0px 0px 100px rgba(255, 255, 255, 0));
-    animation: glow 1.5s ease-in-out alternate infinite;
-    animation-delay: 4s;*/
-}
-
-
 #innerLetterElements{
     width: 100%;
     height: 100%;
     position: absolute;
+    display: grid;
+    align-items: center;
+    justify-content: center;
     justify-items: center;
     
-    display: grid;
     grid-template-columns: 1fr 0.2fr 1fr;
     grid-template-rows: repeat(5, 1fr);
 
     grid-column-start: 1; grid-column-end: 2; grid-row-start: 1; grid-row-end: 6;
     overflow: hidden;
-
 }
 
-#lidShadow{
+#lidWrapper{
     width: 100%;
     height: 100%;
     position: absolute;
     display: grid;
+
     grid-column-start: 1; grid-column-end: 4; grid-row-start: 3; grid-row-end: 5;
-    z-index: 100;
     filter: drop-shadow(0px 0px 25px var(--medium-black));
+    z-index: 100;
     
     /* Animation to be added via JS script
     
@@ -118,7 +122,7 @@ html{
     animation-delay: 200ms;*/
 }
 
-@keyframes noShadow {
+@keyframes fadeLidShadow {
     0%{
         filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
         z-index: 100;
@@ -131,7 +135,7 @@ html{
     }
 }
 
-#letterLidContainer{
+#lidContainer{
     width: inherit;
     height: inherit;
     transform-origin: center top;
@@ -151,69 +155,74 @@ html{
     clip-path: polygon(100% 0%, 50% 100%, 0% 0%);
 }
 
-#outer{
+#outerLid{
     background: radial-gradient( ellipse at top, var(--bright-red) 10%, var(--deep-red) 80%);
 }
 
-#inner{
+#innerLid{
     background: linear-gradient(var(--shadow-red) 10%, var(--bright-red) 125%);
     transform: rotateY(180deg);
 }
 
-#frontBackground{
+#innerLetterBackground{
     width: 100%;
     height: 100%;
     grid-column-start: 1; grid-column-end: 4; grid-row-start: 3; grid-row-end: 6;
     background: var(--shadow-red);
 }
 
-#letterGlowContainer{
-    width: 100%;
-    height: 100%;
+#letterCardContainer{
+    width: 95%;
+    height: 90%;
+    background-color: var(--pure-white);
+    grid-column-start: 1; grid-column-end: 4; grid-row-start: 3; grid-row-end: 6;
 }
 
-#letterGlowContainer{
-    width: 100%;
-    height: 100%;
+#glowWrapper{
+    width: 97%;
+    height: 99%;
     position: absolute;
+    top: 0%;
     display: grid;
-    grid-template-columns: 1fr 0.1fr 0.1fr 1fr;
-    grid-template-rows: repeat(5, 1fr);
     justify-items: center;
+    grid-column-start: 1; grid-column-end: 4; grid-row-start: 1; grid-row-end: 6;
     overflow: hidden;
-
-    filter: drop-shadow(0px 0px 0px rgb(255, 242, 0)) drop-shadow(0px 0px 0px gold);
-    mix-blend-mode: hard-light;
-
-
-    animation: glow 1s ease-in-out alternate infinite;
 }
 
-@keyframes glow {
+#glowContainer{
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0px 0px 0px rgb(255, 242, 0));
+    mix-blend-mode: hard-light;
+    animation: letterGlow 1s ease-in-out alternate infinite;
+}
+
+@keyframes letterGlow {
     from{
-        filter: drop-shadow(0px 0px 0px rgb(255, 242, 0)) drop-shadow(0px 0px 0px gold);
+        filter: drop-shadow(0px 0px 0px rgb(255, 0, 0));
     }to{
-        filter: drop-shadow(0px -20px 20px rgb(255, 242, 0)) drop-shadow(0px -40px 30px gold);
+        filter: drop-shadow(0px -20px 40px rgb(255, 0, 0));
     }
 }
 
-#letterGlow{
+#glowEmmiter{
     width: 100%;
     height: 100%;
     position: absolute;
     background-color: var(--medium-black);
-    clip-path: polygon(0% 41%, 0% 100%, 100% 100%, 100% 41%, 59% 68%, 50% 61%, 41% 68%);
+    clip-path: polygon(0% 42%, 0% 100%, 100% 100%, 100% 42%, 59% 68%, 50% 61%, 41% 68%);
 }
 
-.letterSide{
+.letterShape{
     width: 100%;
     height: 100%;
     position: absolute;
 }
 
-#bottomShadow{
+#bottomWrapper{
     width: 100%;
     height: 100%;
+    position: absolute;
     display: grid;
     grid-column-start: 1; grid-column-end: 4; grid-row-start: 4; grid-row-end: 6;
     filter: drop-shadow(0px 0px 25px var(--shadow-red));
@@ -224,9 +233,11 @@ html{
     animation-delay: 2s;*/
 }
 
-#leftShadow{
+#leftWrapper{
     width: 100%;
     height: 100%;
+    position: absolute;
+    display: grid;
     grid-column-start: 1; grid-column-end: 2;
     grid-row-start: 3; grid-row-end: 6;
     filter: drop-shadow(0px 0px 20px var(--shadow-red));
@@ -235,9 +246,12 @@ html{
     animation-delay: 2s;*/
 }
 
-#rightShadow{
+#rightWrapper{
     width: 100%;
     height: 100%;
+    position: absolute;
+    right: 0%;
+    display: grid;
     grid-column-start: 3; grid-column-end: 4;
     grid-row-start: 3; grid-row-end: 6;
     filter: drop-shadow(0px 0px 20px var(--shadow-red));
@@ -246,25 +260,25 @@ html{
     animation-delay: 2s;*/
 }
 
-#bottomSide{
-    width: inherit;
-    height: inherit;
+#bottomComponent{
+    width: 100%;
+    height: 100%;
     background: radial-gradient( ellipse at top, var(--bright-red) 20%, var(--deep-red) 70%);
     clip-path: polygon(100% 100%, 50% 0%, 0% 100%);
 
 }
 
-#leftSide{
-    width: inherit;
-    height: inherit;
+#leftComponent{
+    width: 100%;
+    height: 100%;
     background: radial-gradient( ellipse at top right, var(--bright-red) 30%, var(--deep-red) 75%);
     clip-path: polygon(100% 50%, 0% 0%, 0% 100%);
 
 }
 
-#rightSide{
-    width: inherit;
-    height: inherit;
+#rightComponent{
+    width: 100%;
+    height: 100%;
     background: radial-gradient( ellipse at top left, var(--bright-red) 30%, var(--deep-red) 75%);
     clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
 
