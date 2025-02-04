@@ -16,69 +16,119 @@
     /*outline: 1px solid red;*/
 }
 
+html{
+    background-color: var(--medium-black);
+}
+
 #openingSequence{
     width: 100svw;
     height: 100svh;
-    overflow: hidden;
-    background-color: var(--medium-black);
     position: relative;
     display: flex;
+    overflow: hidden;
+    background-color: var(--medium-black);
     justify-content: center;
     align-items: center;
 }
 
 #letterContainer{
     width: 80svw;
-    height: 50svw;
-    background: linear-gradient(var(--shadow-red) 20%, var(--bright-red));
+    height: 80svw;
     position: absolute;
-    transform-style: preserve-3d;
-    transform: translateY(250%) scale(0.2) rotatex(0deg);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
 
-    animation: letterSlideIn 5s cubic-bezier(.33,1.08,.84,1.08) forwards;
+    transform-style: preserve-3d;
+    transform: translateY(250%) scale(0.2) rotateY(0deg);
+
+    animation: letterSlideIn 6s cubic-bezier(.33,1.08,.84,1.08) forwards;
+}
+
+@keyframes letterSlideIn {
+    0%{
+        transform: translateY(250%) scale(0.2) rotateY(0deg);
+        
+    }20%{
+        transform: translateY(110%) scale(0.4);
+        
+    }30%{
+        transform: translateY(120%) scale(0.4) rotateY(-25deg);
+
+    }100%{
+        transform: translateY(0%) scale(1) rotateY(720deg);
+
+    }
 }
 
 #frontLetterContainer{
-    position: absolute;
     width: 100%;
     height: 100%;
+    position: absolute;
     display: grid;
+
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-start: 1; grid-column-end: 2; grid-row-start: 1; grid-row-end: 6;
     backface-visibility: hidden;
 }
 
 #backLetterContainer{
-    position: absolute;
     width: 100%;
     height: 100%;
-    background: radial-gradient( ellipse at center, var(--bright-red) 0%, var(--deep-red) 70%);
+    position: absolute;
+    display: grid;
+    grid-column-start: 1; grid-column-end: 2; grid-row-start: 3; grid-row-end: 6;
+    background: radial-gradient(ellipse at top, var(--bright-red) -20%, var(--shadow-red) 85%);
     transform: rotateY(180deg);
-    filter: drop-shadow(0px 0px 200px rgba(255, 255, 255, 0)) drop-shadow(0px 0px 100px rgba(255, 255, 255, 0));
 
+    /*filter: drop-shadow(0px 0px 200px rgba(255, 255, 255, 0)) drop-shadow(0px 0px 100px rgba(255, 255, 255, 0));
     animation: glow 1.5s ease-in-out alternate infinite;
-    animation-delay: 4s;
-
+    animation-delay: 4s;*/
 }
 
-#innerElements{
+
+#innerLetterElements{
     width: 100%;
     height: 100%;
-    grid-column-start: 1;grid-column-end: 4;grid-row-start: 1;grid-row-end: 4;
+    position: absolute;
+    justify-items: center;
+    
     display: grid;
     grid-template-columns: 1fr 0.2fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    grid-column-start: 1; grid-column-end: 2; grid-row-start: 1; grid-row-end: 6;
     overflow: hidden;
+
 }
 
 #lidShadow{
     width: 100%;
     height: 100%;
-    grid-column-start: 1;grid-column-end: 4;grid-row-start: 1;grid-row-end: 3;
+    position: absolute;
+    display: grid;
+    grid-column-start: 1; grid-column-end: 4; grid-row-start: 3; grid-row-end: 5;
+    z-index: 100;
+    filter: drop-shadow(0px 0px 25px var(--medium-black));
     
-    filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
-    /*animation: noShadow 1.5s forwards ease-out;
+    /* Animation to be added via JS script
+    
+    animation: noShadow 1.5s forwards ease-out;
     animation-delay: 200ms;*/
+}
+
+@keyframes noShadow {
+    0%{
+        filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
+        z-index: 100;
+    }50%{
+        filter: drop-shadow(0px 10px 20px rgba(39, 1, 1, 0));
+        z-index: 0;
+    }100%{
+        filter: drop-shadow(0px 10px 20px rgba(39, 1, 1, 0));
+        z-index: 0;
+    }
 }
 
 #letterLidContainer{
@@ -86,7 +136,10 @@
     height: inherit;
     transform-origin: center top;
     transform-style: preserve-3d;
-    /*animation: openLetter 1.5s forwards ease-out;
+
+    /* Animation to be added via JS script
+    
+    animation: openLetter 1.5s forwards ease-out;
     animation-delay: 200ms;*/
 }
 
@@ -99,15 +152,58 @@
 }
 
 #outer{
-    background: radial-gradient( ellipse at top, var(--bright-red) 20%, var(--deep-red) 70%);
-
+    background: radial-gradient( ellipse at top, var(--bright-red) 10%, var(--deep-red) 80%);
 }
 
 #inner{
-    background: linear-gradient(var(--shadow-red) 20%, var(--bright-red));
+    background: linear-gradient(var(--shadow-red) 10%, var(--bright-red) 125%);
     transform: rotateY(180deg);
 }
 
+#frontBackground{
+    width: 100%;
+    height: 100%;
+    grid-column-start: 1; grid-column-end: 4; grid-row-start: 3; grid-row-end: 6;
+    background: var(--shadow-red);
+}
+
+#letterGlowContainer{
+    width: 100%;
+    height: 100%;
+}
+
+#letterGlowContainer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 0.1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    justify-items: center;
+    overflow: hidden;
+
+    filter: drop-shadow(0px 0px 0px rgb(255, 242, 0)) drop-shadow(0px 0px 0px gold);
+    mix-blend-mode: hard-light;
+
+
+    animation: glow 1s ease-in-out alternate infinite;
+}
+
+@keyframes glow {
+    from{
+        filter: drop-shadow(0px 0px 0px rgb(255, 242, 0)) drop-shadow(0px 0px 0px gold);
+    }to{
+        filter: drop-shadow(0px -20px 20px rgb(255, 242, 0)) drop-shadow(0px -40px 30px gold);
+    }
+}
+
+#letterGlow{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--medium-black);
+    clip-path: polygon(0% 41%, 0% 100%, 100% 100%, 100% 41%, 59% 68%, 50% 61%, 41% 68%);
+}
 
 .letterSide{
     width: 100%;
@@ -118,10 +214,13 @@
 #bottomShadow{
     width: 100%;
     height: 100%;
-    grid-column-start: 1; grid-column-end: 4;
-    grid-row-start: 2; grid-row-end: 4;
-    filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
-    /*animation: pulse 1s ease-in-out alternate infinite;
+    display: grid;
+    grid-column-start: 1; grid-column-end: 4; grid-row-start: 4; grid-row-end: 6;
+    filter: drop-shadow(0px 0px 25px var(--shadow-red));
+
+    /* Animation to be added via JS script
+    
+    animation: pulse 1s ease-in-out alternate infinite;
     animation-delay: 2s;*/
 }
 
@@ -129,8 +228,9 @@
     width: 100%;
     height: 100%;
     grid-column-start: 1; grid-column-end: 2;
-    grid-row-start: 1; grid-row-end: 4;
-    filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
+    grid-row-start: 3; grid-row-end: 6;
+    filter: drop-shadow(0px 0px 20px var(--shadow-red));
+
     /*animation: pulse 1s ease-in-out alternate infinite;
     animation-delay: 2s;*/
 }
@@ -139,9 +239,9 @@
     width: 100%;
     height: 100%;
     grid-column-start: 3; grid-column-end: 4;
-    grid-row-start: 1; grid-row-end: 4;
-    filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
-    filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
+    grid-row-start: 3; grid-row-end: 6;
+    filter: drop-shadow(0px 0px 20px var(--shadow-red));
+
     /*animation: pulse 1s ease-in-out alternate infinite;
     animation-delay: 2s;*/
 }
@@ -157,7 +257,7 @@
 #leftSide{
     width: inherit;
     height: inherit;
-    background: radial-gradient( ellipse at top right, var(--bright-red) 20%, var(--deep-red) 70%);
+    background: radial-gradient( ellipse at top right, var(--bright-red) 30%, var(--deep-red) 75%);
     clip-path: polygon(100% 50%, 0% 0%, 0% 100%);
 
 }
@@ -165,10 +265,12 @@
 #rightSide{
     width: inherit;
     height: inherit;
-    background: radial-gradient( ellipse at top left, var(--bright-red) 20%, var(--deep-red) 70%);
+    background: radial-gradient( ellipse at top left, var(--bright-red) 30%, var(--deep-red) 75%);
     clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
 
 }
+
+
 
 #sparkleContainer{
     position: absolute;
@@ -181,7 +283,6 @@
 }
 
 #mainLineContainer{
-    border: 2px solid red;
     grid-column-start: 2; grid-column-end: 15;
     grid-row-start: 3; grid-row-end: 31;
 }
@@ -196,16 +297,6 @@
     clip-path: url(#topMainLine);
 }
 
-.bottomLine{
-    fill: var(--medium-black);
-    background-color: #FFFFFF;
-    stroke: #F0F0F0;
-    stroke-width: 10%;
-    clip-path: url(#bottomMainLine);
-}
-
-
-
 /* Animations */
 
 @keyframes openLetter {
@@ -216,46 +307,11 @@
     }
 }
 
-@keyframes noShadow {
-    0%{
-        filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
-    }50%{
-        filter: drop-shadow(0px 10px 20px rgba(39, 1, 1, 0));
-    }100%{
-        filter: drop-shadow(0px 10px 20px rgba(39, 1, 1, 0));
-    }
-}
-
 @keyframes pulse {
     from{
         filter: drop-shadow(0px 10px 20px rgb(39, 1, 1));
     }to{
         filter: drop-shadow(0px 10px 20px rgb(255, 0, 0));
-    }
-}
-
-@keyframes letterSlideIn {
-    0%{
-        transform: translateY(250%) scale(0.2) rotateY(0deg);
-        
-    }20%{
-        transform: translateY(140%) scale(0.4);
-        
-    }30%{
-        transform: translateY(143%) scale(0.4) rotateY(-25deg);
-    }35%{
-        transform: translateY(144%) scale(0.4) rotateY(-27deg);
-       
-    }100%{
-        transform: translateY(0%) scale(1) rotateY(720deg);
-    }
-}
-
-@keyframes glow {
-    from{
-        filter: drop-shadow(0px 0px 200px rgba(255, 255, 255, 0)) drop-shadow(0px 0px 200px rgba(255, 255, 255, 0));
-    }to{
-        filter: drop-shadow(0px 0px 400px rgb(255, 255, 255)) drop-shadow(0px 0px 200px rgb(255, 255, 255));
     }
 }
 

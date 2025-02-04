@@ -11,11 +11,12 @@ function openLetter() {
     lid.style.animationDelay = "200ms";
     lidShadow.style.animation = "noShadow 1.5s forwards ease-out";
     lidShadow.style.animationDelay = "200ms";
-    glowEffect1.style.animation = "pulse 1s ease-in-out alternate infinite";
+    /*glowEffect1.style.animation = "pulse 1s ease-in-out alternate infinite";
     glowEffect1.style.animationDelay = "2s";
     glowEffect2.style.animation = "pulse 1s ease-in-out alternate infinite";
     glowEffect2.style.animationDelay = "2s";
     glowEffect3.style.animation = "pulse 1s ease-in-out alternate infinite";
     glowEffect3.style.animationDelay = "2s";
     letter.style.animation = "closeUp 1s ease-in-out forwards";
-}
+    */
+    }
