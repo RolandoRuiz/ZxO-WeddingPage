@@ -189,35 +189,35 @@ html{
 }
 
 .spark{
-    width: 3%;
-    border-radius: 40%;
-    background: linear-gradient(#ffffff00, #FFFFFF 30%, #ffffff4b 60%, #ffffff00);
+    width: 2%;  
+    background: linear-gradient(#ffffff00, #FFFFFF 20%, #ffffff4b 50%, #ffffff00);
     filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.68));
-    animation: sparkMovement 3s ease-out forwards infinite;
+    animation: sparkMovement1 2.8s ease-out forwards infinite;
+    border-radius: 100%;
 
 }
 
 .smallSpark{
     width: 1%;
-    border-radius: 80%;
-    background: linear-gradient(#ffffff00, #FFFFFF 30%, #ffffff09 60%, #ffffff00);
+    background: linear-gradient(#ffffff00, #FFFFFF 20%, #ffffff09 50%, #ffffff00);
     filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.68));
-    animation: sparkMovement 3.2s ease-out forwards infinite;
+    animation: sparkMovement2 2.8s ease-out forwards infinite;
+    border-radius: 100%;
 }
 
 #spark1{
-    height: 25%;
+    height: 30%;
     position: absolute;
     top: 22%;
     left: 11%;
-    transform: translateY(80px);
+    transform: translateY(150px);
     animation-delay: 0.8s;
 }
 
 #spark2{
-    height: 25%;
+    height: 30%;
     position: absolute;
-    top: 38%;
+    top: 35%;
     left: 34%;
     transform: translateY(80px);
     animation-delay: 1.3s;
@@ -226,9 +226,9 @@ html{
 #spark3{
     height: 32%;
     position: absolute;
-    top: 5%;
+    top: 7%;
     left: 55%;
-    transform: translateY(80px);
+    transform: translateY(170px);
     animation-delay: 2.2s;
 }
 
@@ -246,7 +246,7 @@ html{
     position: absolute;
     top: 15%;
     left: 85%;
-    transform: translateY(80px);
+    transform: translateY(140px);
     animation-delay: 1.8s;
 
 }
@@ -263,7 +263,7 @@ html{
 #spark7{
     height: 35%;
     position: absolute;
-    top: 10%;
+    top: 30%;
     left: 45%;
     transform: translateY(80px);
     animation-delay: 3s;
@@ -283,12 +283,12 @@ html{
     position: absolute;
     top: 20%;
     left: 92%;
-    transform: translateY(80px);
+    transform: translateY(110px);
     animation-delay: 1s;
 }
 
 
-@keyframes sparkMovement {
+@keyframes sparkMovement1 {
     0%{
         height: 0%;
         opacity: 0;
@@ -302,6 +302,19 @@ html{
     }
 }
 
+@keyframes sparkMovement2 {
+    0%{
+        height: 0%;
+        opacity: 0;
+    }60%{
+        opacity: 0.7;
+    }70%{
+        opacity: 0.7;
+    }100%{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
 
 #glowWrapper{
     width: 97%;
