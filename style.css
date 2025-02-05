@@ -184,56 +184,55 @@ html{
     height: 99%;
     position: absolute;
     display: grid;
-
     grid-column-start: 1; grid-column-end: 4; grid-row-start: 1; grid-row-end: 6;
 }
 
 .spark{
-    width: 2%;  
+    width: 1.3%;  
+    height: 0%;
     background: linear-gradient(#ffffff00, #FFFFFF 20%, #ffffff4b 50%, #ffffff00);
     filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.68));
-    animation: sparkMovement1 2.8s ease-out forwards infinite;
+    animation: sparkMovement1 4s ease-out forwards infinite;
     border-radius: 100%;
 
 }
 
 .smallSpark{
-    width: 1%;
+    width: 0.5%;
+    height: 0%;
     background: linear-gradient(#ffffff00, #FFFFFF 20%, #ffffff09 50%, #ffffff00);
     filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.68));
-    animation: sparkMovement2 2.8s ease-out forwards infinite;
+    animation: sparkMovement2 5s ease-out forwards infinite;
     border-radius: 100%;
 }
 
 #spark1{
-    height: 30%;
     position: absolute;
     top: 22%;
     left: 11%;
     transform: translateY(150px);
-    animation-delay: 0.8s;
+    animation-delay: 0.5s;
 }
 
 #spark2{
-    height: 30%;
+    width: 1%;
     position: absolute;
-    top: 35%;
+    top: 28%;
     left: 34%;
-    transform: translateY(80px);
-    animation-delay: 1.3s;
+    transform: translateY(50px);
+    animation-delay: 2s;
 }
 
 #spark3{
-    height: 32%;
     position: absolute;
     top: 7%;
     left: 55%;
-    transform: translateY(170px);
-    animation-delay: 2.2s;
+    transform: translateY(150px);
+    animation-delay: 2.4s;
 }
 
 #spark4{
-    height: 30%;
+    width: 1%;
     position: absolute;
     top: 35%;
     left: 68%;
@@ -242,17 +241,15 @@ html{
 }
 
 #spark5{
-    height: 25%;
     position: absolute;
-    top: 15%;
+    top: 20%;
     left: 85%;
     transform: translateY(140px);
-    animation-delay: 1.8s;
+    animation-delay: 1.6s;
 
 }
 
 #spark6{
-    height: 30%;
     position: absolute;
     top: 28%;
     left: 22%;
@@ -261,7 +258,6 @@ html{
 }
 
 #spark7{
-    height: 35%;
     position: absolute;
     top: 30%;
     left: 45%;
@@ -270,7 +266,6 @@ html{
 }
 
 #spark8{
-    height: 25%;
     position: absolute;
     top: 31%;
     left: 75%;
@@ -279,7 +274,6 @@ html{
 }
 
 #spark9{
-    height: 30%;
     position: absolute;
     top: 20%;
     left: 92%;
@@ -293,12 +287,18 @@ html{
         height: 0%;
         opacity: 0;
     }60%{
+        height: 40%;
         opacity: 0.9;
-    }70%{
+        
+    }65%{
+        height: 40%;
         opacity: 0.9;
+        
     }100%{
         transform: translateY(-50px);
+        height: 15%;
         opacity: 0;
+        
     }
 }
 
@@ -307,13 +307,38 @@ html{
         height: 0%;
         opacity: 0;
     }60%{
-        opacity: 0.7;
+        height: 30%;
+        opacity: 0.6;
     }70%{
-        opacity: 0.7;
+        height: 30%;
+        opacity: 0.6;
     }100%{
         transform: translateY(-50px);
+        height: 20%;
         opacity: 0;
     }
+}
+
+.star{
+    width: 100%;
+    height: 4%;
+    position: absolute;
+    top: 15%;
+    background-color: #ffffff;
+}
+
+#sixPoint{
+    clip-path: polygon(50% 0, 56% 41%, 81% 19%, 60% 44%, 100% 50%, 60% 56%, 81% 81%, 56% 59%, 50% 100%, 44% 59%, 18% 82%, 40% 56%, 0 50%, 40% 44%, 19% 18%, 44% 40%);
+    transform: scale(3.5);
+}
+
+#fourPoint{
+    clip-path: polygon(0% 50%, 50% 40%, 100% 50%, 51% 59%);    
+    transform: scale(4);
+}
+
+.spark:has(.star){
+    filter: drop-shadow(0px 0px 5px white);
 }
 
 #glowWrapper{
