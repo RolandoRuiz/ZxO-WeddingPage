@@ -207,16 +207,26 @@ html{
     height: 100%;
     position: absolute;
     clip-path: circle(50% at 50% 50%);
-    background: radial-gradient(ellipse at top right,#d39539 20%, #ffeb99 40%, #faac37, #723615 80%);
+    background: radial-gradient(ellipse at top right,#d39539 15%, #ffeb99 40%, #faac37, #86411c 80%);
 }
 
-#sealBevel{
+#sealLowerBevel{
     width: 88%;
     height: 88%;
     position: absolute;
     clip-path: circle(50% at 50% 50%);
 
-    box-shadow: inset 0px 0px 15px rgb(197, 91, 5), inset 0px 0px 6px rgb(197, 91, 5);
+    box-shadow: inset 0px 0px 15px rgb(139, 91, 51), inset 0px 0px 6px rgb(197, 91, 5);
+    border-radius: 100%;
+    mix-blend-mode: multiply;
+}
+
+#sealUpperBevel{
+    width: 93%;
+    height: 93%;
+    position: absolute;
+    background: rgba(249, 145, 61, 0.3);
+    clip-path: circle(50% at 50% 50%);
     border-radius: 100%;
     mix-blend-mode: multiply;
 }
@@ -225,8 +235,6 @@ html{
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: url(img/waxTexture.jpg);
-    image-resolution: from-image;
     clip-path: circle(46% at 50% 50%);
     mix-blend-mode: multiply;
 
