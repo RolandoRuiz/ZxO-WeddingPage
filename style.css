@@ -226,6 +226,7 @@ html{
     height: 100%;
     position: absolute;
     background-image: url(img/waxTexture.jpg);
+    image-resolution: from-image;
     clip-path: circle(46% at 50% 50%);
     mix-blend-mode: multiply;
 
