@@ -17,6 +17,6 @@ function openLetter() {
     glowEffect2.style.animationDelay = "2s";
     glowEffect3.style.animation = "pulse 1s ease-in-out alternate infinite";
     glowEffect3.style.animationDelay = "2s";*/
-    
+
     letter.style.animation = "closeUp 1s ease-in-out forwards";
     }
