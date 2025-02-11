@@ -24,18 +24,20 @@
             </svg>
         </div>-->
 
-        <div id="letterContainer" onclick="openLetter()">
-            <div id="backLetterContainer"></div>
+        <div id="letterWrapper" onclick="openLetter()">
+            <div id="backLetterWrapper"></div>
             
-            <div id="frontLetterContainer">
+            <div id="frontLetterWrapper">
 
-                <div id="innerLetterElements">
+                <div id="lidWrapper">
+                    <div id="lidContainer">
+                        <div class="lid" id="innerLid"></div>
+                        <div class="lid" id="outerLid"></div>
+                    </div>
+                </div>
 
-                    <div id="lidWrapper">
-                        <div id="lidContainer">
-                            <div class="lid" id="innerLid"></div>
-                            <div class="lid" id="outerLid"></div>
-                        </div>
+
+                    <div id="sealWrapper">
                         <div id="lidSealContainer">
                             <div id="innerSeal">
                                 <div id="sealBase"></div>
@@ -69,19 +71,25 @@
                         <div class="smallSpark" id="spark9"><div  id="fourPoint" class="star"></div></div>
                     </div>
 
-                    <div id="leftWrapper">
-                        <div class="letterShape" id="leftComponent"></div>
+                    <div id="sidesWrapper">
+                        <div id="leftWrapper">
+                            <div class="letterShape" id="leftComponent"></div>
+                        </div>
+    
+                        <div id="rightWrapper">
+                            <div class="letterShape" id="rightComponent"></div>
+                        </div>
+    
+                        <div id="bottomWrapper">
+                            <div class="letterShape" id="bottomComponent"></div>
+                        </div> 
                     </div>
+            </div>
 
-                    <div id="rightWrapper">
-                        <div class="letterShape" id="rightComponent"></div>
-                    </div>
-
-                    <div id="bottomWrapper">
-                        <div class="letterShape" id="bottomComponent"></div>
-                    </div> 
-
-                </div> 
+            <div id="branchWrapper">
+                <div id="branchContainer">
+                    <img id="branchSvg" src="Rama.svg" alt="BranchImage">
+                </div>
             </div>
         </div>
     </section>

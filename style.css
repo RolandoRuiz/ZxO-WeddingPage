@@ -20,6 +20,8 @@ html{
     background-color: var(--medium-black);
 }
 
+/********************************************************************************************/
+
 #openingSequence{
     width: 100svw;
     height: 100svh;
@@ -31,7 +33,7 @@ html{
     align-items: center;
 }
 
-#letterContainer{
+#letterWrapper{
     width: 80svw;
     height: 80svw;
     position: absolute;
@@ -60,7 +62,8 @@ html{
 
     }
 }
-#backLetterContainer{
+
+#backLetterWrapper{
     width: 100%;
     height: 100%;
     position: absolute;
@@ -78,19 +81,7 @@ html{
 }
 
 
-#frontLetterContainer{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: grid;
-
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-start: 1; grid-column-end: 2; grid-row-start: 1; grid-row-end: 6;
-    backface-visibility: hidden;
-}
-
-#innerLetterElements{
+#frontLetterWrapper{
     width: 100%;
     height: 100%;
     position: absolute;
@@ -98,23 +89,19 @@ html{
     align-items: center;
     justify-content: center;
     justify-items: center;
-    overflow: hidden;
-    
+
     grid-template-columns: 1fr 0.2fr 1fr;
     grid-template-rows: repeat(5, 1fr);
-
     grid-column-start: 1; grid-column-end: 2; grid-row-start: 1; grid-row-end: 6;
+    backface-visibility: hidden;
 }
+
+/********************************************************************************************/
 
 #lidWrapper{
     width: 100%;
     height: 100%;
     position: absolute;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: end;
-    justify-items: center;
-
     grid-column-start: 1; grid-column-end: 4; grid-row-start: 3; grid-row-end: 5;
     filter: drop-shadow(0px 0px 25px var(--medium-black));
     z-index: 100;
@@ -166,6 +153,34 @@ html{
 #innerLid{
     background: linear-gradient(var(--shadow-red) 10%, var(--bright-red) 125%);
     transform: rotateY(180deg);
+}
+
+/********************************************************************************************/
+
+#branchWrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    grid-column-start: 1; grid-column-end: 4; grid-row-start: 1; grid-row-end: 6;
+    filter: drop-shadow(0px 0px 25px var(--medium-black));
+    
+    /* Animation to be added via JS script
+    
+    animation: noShadow 1.5s forwards ease-out;
+    animation-delay: 200ms;*/
+}
+
+#branchContainer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#branchSvg{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 #lidSealContainer{
@@ -451,12 +466,23 @@ html{
     position: absolute;
 }
 
+#sidesWrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 0.2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-start: 1; grid-column-end: 4; grid-row-start: 3; grid-row-end: 6;
+    overflow: hidden;
+}
+
 #bottomWrapper{
     width: 100%;
     height: 100%;
     position: absolute;
     display: grid;
-    grid-column-start: 1; grid-column-end: 4; grid-row-start: 4; grid-row-end: 6;
+    grid-column-start: 1; grid-column-end: 4; grid-row-start: 2; grid-row-end: 6;
     filter: drop-shadow(0px 0px 25px var(--shadow-red));
 
     /* Animation to be added via JS script
@@ -471,7 +497,7 @@ html{
     position: absolute;
     display: grid;
     grid-column-start: 1; grid-column-end: 2;
-    grid-row-start: 3; grid-row-end: 6;
+    grid-row-start: 1; grid-row-end: 4;
     filter: drop-shadow(0px 0px 20px var(--shadow-red));
 
     /*animation: pulse 1s ease-in-out alternate infinite;
@@ -485,7 +511,7 @@ html{
     right: 0%;
     display: grid;
     grid-column-start: 3; grid-column-end: 4;
-    grid-row-start: 3; grid-row-end: 6;
+    grid-row-start: 1; grid-row-end: 4;
     filter: drop-shadow(0px 0px 20px var(--shadow-red));
 
     /*animation: pulse 1s ease-in-out alternate infinite;
