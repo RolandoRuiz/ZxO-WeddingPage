@@ -198,7 +198,7 @@ html{
 
 #middleSeal{
     width: 100%;
-    height: 7%;
+    height: 6%;
     position: absolute;
     top: 50%;
     transform-origin: center center;
@@ -248,10 +248,10 @@ html{
 @keyframes moveSeal {
     0%{
         top: 0%;
-    }10%{
-        top: 7%;
-    }60%{
-        top: 7%;
+    }15%{
+        top: 6%;
+    }50%{
+        top: 6%;
     }100%{
         top: 0%;
     }
