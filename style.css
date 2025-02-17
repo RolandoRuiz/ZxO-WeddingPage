@@ -5,7 +5,8 @@
     --soft-gold: #D5B88F;
     --soft-grey: #F0F0F0;
     --pure-white: #FFFFFF;
-    --medium-black: #0d0d0d;
+    --medium-black1: #090909;
+    --medium-black2: #0b0b0b;
 }
 
 *, *::before, *::after{
@@ -17,7 +18,7 @@
 }
 
 html{
-    background-color: var(--medium-black);
+    background-color: var(--medium-black1);
 }
 
 /********************************************************************************************/
@@ -28,37 +29,49 @@ html{
     position: relative;
     display: flex;
     overflow: hidden;
-    background-color: var(--medium-black);
+        --s: 19.2px; /* control the size*/
+        
+        --g:conic-gradient(at 90% 40%,#0000 75%,var(--medium-black2) 0);
+        background: var(--g),var(--g) var(--s) var(--s) var(--medium-black1);
+        background-size: calc(2*var(--s)) calc(2*var(--s));
     justify-content: center;
     align-items: center;
 }
 
+#backgroundShadow{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: radial-gradient( rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 140%);
+    background-size: contain;
+    mix-blend-mode: multiply;
+}
+
 #letterWrapper{
-    width: 80svw;
-    height: 80svw;
+    width: 76svw;
+    height: 76svw;
     position: absolute;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
-
     transform-style: preserve-3d;
-    transform: translateY(250%) scale(0.2) rotateY(0deg);
+    transform: translateY(250%) scale(0) rotateY(0deg);
 
-    animation: letterSlideIn 6s cubic-bezier(.33,1.08,.84,1.08) forwards;
+    animation: letterEmerge 6.5s cubic-bezier(.33,1.08,.84,1.08) forwards 5s;
 }
 
-@keyframes letterSlideIn {
+@keyframes letterEmerge {
     0%{
-        transform: translateY(250%) scale(0.2) rotateY(0deg);
+        transform: translateY(250%) scale(0) rotateY(0deg);
         
-    }20%{
-        transform: translateY(110%) scale(0.4);
+    }25%{
+        transform: translateY(75%) scale(0.4);
         
-    }30%{
-        transform: translateY(120%) scale(0.4) rotateY(-25deg);
+    }35%{
+        transform: translateY(80%) scale(0.39) rotateY(-25deg);
 
     }100%{
-        transform: translateY(0%) scale(1) rotateY(720deg);
+        transform: translateY(-15%) scale(1) rotateY(720deg);
 
     }
 }
